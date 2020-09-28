@@ -1,0 +1,578 @@
+/*
+    Theme Name: Giving Theme
+    Theme URI: http://96.127.138.18/~syscol/prueba-giving/
+    Author: Ricardo Morales Ramírez
+    Author URI: https://www.linkedin.com/in/moralesricardo/
+    Description: Theme Diseñado para la presentación de pruebas con la empresa Giving Agency
+    Version: 1.0
+    License: GNU Genaral Public License v2 or later
+    License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+    Tags: Prueba, Desarrolador Fullstack, flexbox, mobile first
+    Text Domain: Giving-theme
+*/
+
+:root {
+    /** Fuentes **/
+    --fuentePrincipal: 'Oswald', sans-serif;
+    --fuenteSecundaria: 'Lato', sans-serif;
+
+    /** Colores **/
+    --colorPrimario: #FF5B00;
+    --grisOscuro: #2F2E2E;
+    --grisClaro:#EBEBEB;
+    --blanco: #FFFFFF;
+    --black: #000000;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;/* 10px = 1rem! */
+}
+
+body {
+    font-size: 16px;
+    font-size: 1.6rem;
+    line-height: 2;
+    font-family: var(--fuenteSecundaria);
+    background-color: #f6f6f6;
+}
+body.home {
+    background-color: var(--blanco);
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/** Headings **/
+
+h1, h2, h3, h4 {
+    font-family: var(--fuentePrincipal);
+    text-transform: uppercase;
+    margin: 1rem 0;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 6rem;
+}
+
+h2 {
+    font-size: 4.8rem;
+}
+
+h3 {
+    font-size: 3.6rem;
+}
+
+h4 {
+    font-size: 2.4rem;
+}
+
+/** Globales **/
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.contenedor {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+hr {
+    border: 1px solid var(--grisClaro);
+}
+
+.imagen-destacada {
+    margin-bottom: 3rem;
+}
+
+/** Utilidades **/
+
+.text-center {
+    text-align: center;
+}
+
+.texto-primario {
+    color: var(--grisOscuro);
+}
+
+.seccion {
+    padding: 5rem 0;
+}
+
+/** Header **/
+
+body.home .site-header {
+    padding-top: 2rem;
+    height: auto;
+    min-height: 70rem;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-bottom: none;
+}
+
+@media (min-width: 768px) {
+    body.home .site-header {
+        height: 100vh;
+    }
+    .header-grid {
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+    }
+    .header-grid .barra-navegacion {
+        grid-column: 1 / 5;
+    }
+}
+
+.site-header {
+    background-color: var(--blanco);
+    padding: 2rem 0;
+    border-bottom: 2px solid var(--grisClaro);
+}
+
+@media (min-width: 768px) {
+    .barra-navegacion {
+        display: flex;
+        justify-content: space-between;
+    }   
+}
+
+/** Barra fija **/
+
+@media (min-width: 768px) {
+    body.home.ft-activo {
+        margin-top: 1.61rem;
+    }
+    body.ft-activo {
+        margin-top: 16rem;
+    }
+    .fixed-top {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: var(--blanco);
+        padding: 1rem 5rem;
+        height: 10rem;
+        border-bottom: 1px solid var(--grisClaro);
+        z-index: 10000;
+        transition: all .3s ease;
+    }
+    .fixed-top img {
+        width: 12rem;
+    }
+    body.home .fixed-top .menu-principal a {
+        color: var(--grisOscuro);
+    }
+    
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+}
+
+.tagline {
+    color: var(--blanco);
+    margin-top: 5rem;
+}
+
+@media (min-width: 768px) {
+    .tagline {
+        grid-row: 3 / 4;
+        grid-column: 2 / 4;
+        margin-top: 0;
+    }
+}
+
+.tagline p {
+    font-size: 2rem;
+}
+
+/** Menú Principal **/
+
+.menu-principal {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .menu-principal {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    
+    .menu-principal .menu {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .menu-principal li {
+        margin-right: 1rem;
+    }
+
+    .menu-principal li:last-of-type {
+        margin-right: 0;
+    }
+}
+
+body.home .menu-principal a {
+    color:var(--blanco);
+}
+.menu-principal a {
+    font-family: var(--fuenteSecundaria);
+    color: var(--grisOscuro);
+    text-transform: uppercase;
+    font-size: 2.2rem;
+    padding: .5rem 1rem;
+    display: grid;
+}
+
+@media (min-width: 768px) {
+    .menu-principal a {
+        font-size: 1.6rem;
+        font-weight: 600;
+        position: relative;
+        z-index: 1;
+    }
+    .menu-principal a::before,
+    .menu-principal a::after {
+        position: absolute;
+        content: '';
+        display: block;
+        width: 100%;
+        height: 51%;
+        background-color: var(--colorPrimario);
+        z-index: -1;
+        transform: scaleX(0);
+        transition: transform .6s;
+    }
+
+    .menu-principal a::before {
+        top: 0;
+        transform-origin: left;
+    }
+
+    .menu-principal a::after {
+        top: 50%;
+        transform-origin: right;
+    }
+
+    .menu-principal a:hover::before {
+        transform: scaleX(1);
+    }
+
+    .menu-principal a:hover::after {
+        transform: scaleX(1);
+    }
+}
+
+.menu-principal .current_page_item {
+    border-bottom: 3px solid var(--colorPrimario);
+}
+
+/** Reescritura estilos menú movil **/
+
+body.home .slicknav_menu {
+    background-color: transparent;
+}
+.slicknav_menu {
+    background-color: var(--blanco);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .slicknav_menu {
+        display: none;
+    }
+}
+
+.slicknav_btn {
+    background-color: var(--colorPrimario);
+    margin: 2rem 0;
+    padding: 1.5rem;
+}
+
+.slicknav_collapsed:hover {
+    background-color: var(--grisOscuro);
+}
+
+.slicknav_open {
+    background-color: var(--grisOscuro);
+}
+
+body.home .slicknav_nav {
+    background-color: transparent;
+}
+
+body.home .slicknav_nav a {
+    color: var(--blanco);
+}
+.slicknav_nav a {
+    font-size: 2.4rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: var(--fuenteSecundaria);
+    color: var(--grisOscuro);
+}
+
+.slicknav_nav a:hover {
+    background-color: transparent;
+    color: var(--colorPrimario);
+}
+
+/** Footer **/
+
+.contenido-footer {
+    padding: 4rem 0;
+}
+@media (min-width: 768px) {
+    .contenido-footer {
+        display: flex;
+        justify-content:space-between;
+    }
+}
+
+.site-footer {
+    background-color: var(--blanco);
+}
+.site-footer .redes {
+    display: block;
+}
+
+.site-footer .redes {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.site-footer .redes li {
+    margin-right: 1rem;
+}
+
+.site-footer .redes li:last-of-type {
+    margin-right: 0;
+}
+
+.site-footer a {
+    color: var(--black);
+    text-align: center;
+    font-size: 2.4rem;
+}
+
+.copyright {
+    text-align: center;
+    font-family: var(--fuentePrincipal);
+    font-size: 1.8rem;
+    margin: 1rem 0 0 0;
+}
+
+@media (min-width: 768px) {
+    .copyright {
+        font-size: 2.4rem;
+        margin: 0;
+    }
+}
+
+/** Paginas **/
+
+.pagina h1 {
+    margin-bottom: 4rem;
+}
+
+.pagina.con-sidebar {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.con-sidebar .contenido-principal {
+    background-color: var(--blanco);
+}
+
+@media (min-width: 768px) {
+    .pagina.con-sidebar {
+        flex-direction: unset;
+        justify-content: space-between;
+    }
+    
+    .con-sidebar .contenido-principal {
+        flex: 0 0 calc(75% - 2rem);
+    }
+    .con-sidebar .contenido-principal .contenido {
+        padding: 0 2rem 2rem;
+    }
+    .con-sidebar .sidebar {
+        flex: 0 0 calc(25% - 2rem);
+    }
+}
+
+/** No Sidebar **/
+
+.no-sidebar {
+    display: flex;
+    justify-content: center;
+}
+
+.no-sidebar .contenido-principal {
+    flex: 0 1 800px;
+}
+
+/** Informacion Portafolios **/
+
+.informacion-portafolio h1 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--grisOscuro);
+    text-align: left;
+    letter-spacing: .2em;
+    line-height: 1;
+    margin: 0;
+}
+.informacion-portafolio .tipo-portafolio {
+    font-family: var(--fuenteSecundaria);
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--grisOscuro);
+    text-align: left;
+    letter-spacing: .1em;
+    margin: 0;
+}
+
+/** Portafolios **/
+
+.lista-portafolios {
+    margin-top: 4rem;
+}
+
+@media (min-width: 768px) {
+    .lista-portafolios {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+/** Cards **/
+
+.card {
+    margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+    .card {
+        flex: 0 0 calc(50% - 2rem);
+    }
+}
+
+.card img {
+    display: block; 
+}
+
+.card .contenido {
+    padding: 1rem 0;
+    text-align: left;
+    line-height: 1;
+}
+
+.card .contenido h4 {
+    margin: 0;
+}
+.card .contenido h4 a {
+    font-weight: 300;
+    letter-spacing: .2rem;
+    line-height: 1;
+    color: var(--grisOscuro);
+    
+}
+
+.card .contenido p {
+    font-size: 1.5rem;
+    letter-spacing: .1rem;
+    color: var(--grisOscuro);
+    margin: 0;
+}
+
+/** Portafolio Sidebar **/
+
+.sidebar .widget {
+    background: var(--blanco) none repeat scroll 0 0;
+    border: 0.063rem solid rgba(0, 0, 0, 0);
+    box-shadow: 0 0.313rem 1.875rem rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+    padding: 0.938rem;
+}
+@media (min-width: 768px) {
+    .sidebar .widget {
+        margin-top: 0;
+    }
+    
+}
+.widget .texto-primario {
+    border-bottom: 1px solid #e5e5e5;
+    color: var(--grisOscuro);
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    margin-bottom: 1.563rem;
+    padding-bottom: 1rem;
+    position: relative;
+}
+
+.portafolio-sidebar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem;
+}
+
+.portafolio-sidebar .imagen {
+    flex: 0 0 30%;
+}
+
+.portafolio-sidebar .imagen img {
+    display: block;
+}
+
+.portafolio-sidebar .contenido-portafolio {
+    flex: 0 0 calc(70% - 2rem);
+}
+
+.portafolio-sidebar .contenido-portafolio h3 {
+    margin: 0;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: .2em;
+    line-height: .9;
+}
+
+.portafolio-sidebar .contenido-portafolio a {
+    color: var(--grisOscuro);
+}
+
+.portafolio-sidebar .contenido-portafolio p {
+    margin: 0;
+    color: var(--grisOscuro);
+    font-weight: 400;
+    font-size: 1.4rem;
+    letter-spacing: .1em;
+}
