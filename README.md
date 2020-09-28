@@ -1,2 +1,2 @@
 # Giving
-Archivos de prueba de desarrollo backend para theme y plugin de WordPress
+Archivos para presentación de pruebas como desarrollador backend con el API de WordPres, desarrollando un theme y 2 plugins
