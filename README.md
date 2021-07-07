@@ -1,2 +1,2 @@
 # Giving
-Archivos para presentación de pruebas como desarrollador backend con el API de WordPres, desarrollando un theme y 2 plugins
+Files for presentation of tests as a backend developer with the WordPres API, developing a theme and 2 plugins
